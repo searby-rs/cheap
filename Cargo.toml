@@ -9,7 +9,7 @@ homepage = "https://github.com/searby-rs/cheap"
 license = "MIT OR Apache-2.0"
 
 [lib]
-crate-type = ["cdylib", "staticlib"]
+crate-type = ["cdylib", "staticlib", "rlib"]
 
 [dependencies]
 libc = { version = "0.2.161", features = ["align"] }
