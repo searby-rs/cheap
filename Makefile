@@ -31,10 +31,20 @@ install:
 	cp -rf ${LIB}/libcheap.a /usr/local/lib
 	cp -rf ${LIB}/libcheap.so /usr/local/lib
 
+install_termux:
+	cp -rf ${INC} /data/data/com.termux/files/usr/include
+	cp -rf ${LIB}/libcheap.a /data/data/com.termux/files/usr/lib
+	cp -rf ${LIB}/libcheap.so /data/data/com.termux/files/usr/lib
+
 uninstall:
 	rm -rf /usr/local/include/cheap
 	rm -rf /usr/local/lib/libcheap.a
 	rm -rf /usr/local/lib/libcheap.so
+
+uninstall_termux:
+	rm -rf /data/data/com.termux/files/usr/include/cheap
+	rm -rf /data/data/com.termux/files/usr/lib/libcheap.a
+	rm -rf /data/data/com.termux/files/usr/lib/libcheap.so
 
 clean:
 	cargo clean
