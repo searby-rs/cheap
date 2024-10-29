@@ -68,5 +68,5 @@ pub unsafe extern "C" fn deallocate(ptr: *mut c_void, size: size_t, align: size_
 #[no_mangle]
 pub unsafe extern "C" fn reallocate(ptr: *mut c_void, size: size_t, align: size_t, new_size: size_t) -> *mut c_void {
     let layout = layout(size, align);
-    HEAP.realloc(ptr as *mut u8, layout, new_size) as *mut c_void
+    HEAP.realloc(ptr as *mut u8, layout, new_size as usize) as *mut c_void
 }
