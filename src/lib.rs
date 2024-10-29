@@ -35,7 +35,6 @@ unsafe impl GlobalAlloc for Heap {
     }
 }
 
-#[global_allocator]
 static HEAP: Heap = Heap::new();
 
 unsafe fn __layout(size: usize, align: usize) -> Layout {
